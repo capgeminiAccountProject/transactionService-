@@ -1,0 +1,45 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.capgemini'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+
+//targetCompatibility = 1.8
+
+/*ext {
+	set('springCloudServicesVersion', "2.1.4.RELEASE")
+	set('springCloudVersion', "Greenwich.SR1")
+}*/
+
+dependencies {
+	
+
+    
+	compile("org.springframework.boot:spring-boot-starter-web")
+    compile 'mysql:mysql-connector-java'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'// https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-spring-service-connector
+	compile 'org.springframework.cloud:spring-cloud-spring-service-connector'
+	compile 'org.springframework.cloud:spring-cloud-cloudfoundry-connector'
+	
+	//implementation 'io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry'
+	//runtimeOnly 'mysql:mysql-connector-java'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.1'
+}
+
+/*dependencyManagement {
+	imports {
+		mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:${springCloudServicesVersion}"
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}*/

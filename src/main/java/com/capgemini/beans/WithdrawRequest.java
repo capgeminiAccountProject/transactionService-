@@ -46,6 +46,16 @@ public class WithdrawRequest {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("WithdrawRequest [accountNumber=");
+		builder.append(accountNumber);
+		builder.append(", amount=");
+		builder.append(amount);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 }

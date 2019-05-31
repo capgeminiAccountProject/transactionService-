@@ -7,12 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "account")
+@Table(name = "user_account")
 public class Account {
 
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int idcustomers_account;
+    private int account_num;
 	
 	private String firstName;
 	private String lastName;
@@ -26,20 +26,20 @@ public class Account {
 
 	private String accountType;
 
-	private double balance;
+	private double min_balance;
 
 	/**
 	 * @return the idAccount
 	 */
 	public int getIdAccount() {
-		return idcustomers_account;
+		return account_num;
 	}
 
 	/**
 	 * @param idAccount the idAccount to set
 	 */
 	public void setIdAccount(int idAccount) {
-		this.idcustomers_account = idAccount;
+		this.account_num = idAccount;
 	}
 
 	/**
@@ -172,22 +172,43 @@ public class Account {
 	 * @return the balance
 	 */
 	public double getBalance() {
-		return balance;
+		return min_balance;
 	}
 
 	/**
 	 * @param balance the balance to set
 	 */
 	public void setBalance(double balance) {
-		this.balance = balance;
+		this.min_balance = balance;
 	}
 
 	@Override
 	public String toString() {
-		return "AccountEntity [idAccount=" + idcustomers_account + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", dob=" + dob + ", ssn=" + ssn + ", email=" + email + ", mobileNumber=" + mobileNumber
-				+ ", homeAddress=" + homeAddress + ", mailingAddress=" + mailingAddress + ", accountType=" + accountType
-				+ ", balance=" + balance + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Account [account_num=");
+		builder.append(account_num);
+		builder.append(", firstName=");
+		builder.append(firstName);
+		builder.append(", lastName=");
+		builder.append(lastName);
+		builder.append(", dob=");
+		builder.append(dob);
+		builder.append(", ssn=");
+		builder.append(ssn);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", mobileNumber=");
+		builder.append(mobileNumber);
+		builder.append(", homeAddress=");
+		builder.append(homeAddress);
+		builder.append(", mailingAddress=");
+		builder.append(mailingAddress);
+		builder.append(", accountType=");
+		builder.append(accountType);
+		builder.append(", min_balance=");
+		builder.append(min_balance);
+		builder.append("]");
+		return builder.toString();
 	}
-	
+
 }

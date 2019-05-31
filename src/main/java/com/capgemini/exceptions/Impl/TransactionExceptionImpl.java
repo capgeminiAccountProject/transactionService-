@@ -32,11 +32,16 @@ public class TransactionExceptionImpl extends Exception implements TransactionEx
         this.message = message;
     }
 
-    @Override
-    public String toString() {
-        return "TokenException{" +
-                "code=" + code +
-                ", message='" + message + '\'' +
-                '}';
-    }
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("TransactionExceptionImpl [code=");
+		builder.append(code);
+		builder.append(", message=");
+		builder.append(message);
+		builder.append("]");
+		return builder.toString();
+	}
+
+    
 }

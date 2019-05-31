@@ -6,10 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.capgemini.beans.Account;
-import com.capgemini.beans.Transaction;
 
 @Transactional
 @Repository
-public interface TransactionCrudRepository extends CrudRepository<Transaction, Integer> {
+public interface AccountCrudRepository extends CrudRepository<Account, Integer> {
 
 }

@@ -15,9 +15,12 @@ public class TransactionResponse {
 		this.message = message;
 	}
 
+	
+
 	public TransactionResponse() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
+
 
 	/**
 	 * @return the status
@@ -46,7 +49,16 @@ public class TransactionResponse {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("TransactionResponse [status=");
+		builder.append(status);
+		builder.append(", message=");
+		builder.append(message);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 }

@@ -4,8 +4,6 @@ public class DepositRequest {
 	int accountNumber;
 	int amount;
 	
-	
-	
 	public DepositRequest() {
 		super();
 	}
@@ -42,6 +40,16 @@ public class DepositRequest {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("DepositRequest [accountNumber=");
+		builder.append(accountNumber);
+		builder.append(", amount=");
+		builder.append(amount);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }

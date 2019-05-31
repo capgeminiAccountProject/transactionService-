@@ -9,9 +9,14 @@ import lombok.Toint;*/
 public class TransferAmtRequest {
 	int fromAccountNumber;
 	int toAccountNumber;
-	int amount;
+	double amount;
 	
-	public TransferAmtRequest(int fromAccountNumber, int toAccountNumber, int amount) {
+	
+	public TransferAmtRequest() {
+		super();
+	}
+
+	public TransferAmtRequest(int fromAccountNumber, int toAccountNumber, double amount) {
 		this.fromAccountNumber = fromAccountNumber;
 		this.toAccountNumber = toAccountNumber;
 		this.amount = amount;
@@ -48,18 +53,28 @@ public class TransferAmtRequest {
 	/**
 	 * @return the amount
 	 */
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 
 	/**
 	 * @param amount the amount to set
 	 */
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("TransferAmtRequest [fromAccountNumber=");
+		builder.append(fromAccountNumber);
+		builder.append(", toAccountNumber=");
+		builder.append(toAccountNumber);
+		builder.append(", amount=");
+		builder.append(amount);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 }
